@@ -14,10 +14,8 @@ body {
 }
 
 /* Keep main flexible so it pushes wave/footer down */
-main {
-  flex: 1;
-  padding: 2rem;
-}
+main { padding: clamp(1rem, 2.5vw, 2rem); }
+
 
 /* Header & Navbar */
 header {
@@ -76,16 +74,18 @@ header {
 
 /* Content sections */
 /* Wider default section width across the site */
+/* Wider default section width across the site */
 section {
-  background-color: #fff8dc; /* light sand */
+  background-color: #fff8dc;
   padding: 1.5rem;
   border-radius: 10px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   margin: 1rem auto;
 
-  /* was: max-width: 700px; */
-  max-width: min(1100px, 94vw);  /* expands on desktop, stays comfy on mobile */
+  /* wider and more fluid */
+  max-width: clamp(900px, 92vw, 1400px);
 }
+
 
 
 /* Logo sizing */
