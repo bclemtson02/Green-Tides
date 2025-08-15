@@ -1,11 +1,25 @@
-/* Beach Theme Styles */
-body {
+/* Layout baseline for Option 2 */
+html, body {
+  height: 100%;
   margin: 0;
+}
+
+body {
+  min-height: 100vh;           /* fill the viewport */
+  display: flex;
+  flex-direction: column;      /* stack: header/nav, main, wave, footer */
   font-family: 'Segoe UI', sans-serif;
-  background-color: #fdf5d1; /* sand color */
+  background-color: #fdf5d1;   /* sand color */
   color: #333;
 }
 
+/* Keep main flexible so it pushes wave/footer down */
+main {
+  flex: 1;
+  padding: 2rem;
+}
+
+/* Header & Navbar */
 header {
   background-color: #87ceeb; /* sky blue */
   color: white;
@@ -13,74 +27,11 @@ header {
   padding: 2rem 1rem;
 }
 
-main {
-  padding: 2rem;
-}
-
-section {
-  background-color: #fff8dc; /* light sand */
-  padding: 1.5rem;
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  margin: 1rem auto;
-  max-width: 700px;
-}
-
-footer {
-  text-align: center;
-  padding: 1rem;
-  background-color: #87ceeb;
-  color: white;
-  margin-top: 2rem;
-}
-
-.logo {
-  height: 80px;
-  margin-bottom: 1rem;
-}
-
-.wave-container {
-  position: relative;
-  width: 100%;
-  height: 100px;
-  overflow: hidden;
-  margin-top: 2rem;
-}
-
-.wave {
-  position: absolute;
-  bottom: 0;
-  width: 200%;
-  height: 100px;
-  background-repeat: repeat-x;
-  background-size: contain;
-  opacity: 0.7;
-}
-
-.wave1 {
-  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 100"><path fill="%2387ceeb" d="M0,30 C300,90 900,-30 1200,30 L1200,100 L0,100 Z"></path></svg>');
-  animation: waveMove 8s linear infinite;
-}
-
-.wave2 {
-  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 100"><path fill="%2390e0ef" d="M0,40 C300,100 900,-20 1200,40 L1200,100 L0,100 Z"></path></svg>');
-  animation: waveMove 12s linear infinite reverse;
-}
-
-@keyframes waveMove {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-}
-
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #87ceeb; /* light sand */
+  background-color: #87ceeb;
   padding: 0.8rem 2rem;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   position: sticky;
@@ -108,6 +59,8 @@ footer {
   list-style: none;
   display: flex;
   gap: 1.5rem;
+  margin: 0;
+  padding: 0;
 }
 
 .nav-links li a {
@@ -121,5 +74,64 @@ footer {
   color: #fdf5d1;  /* soft sand for hover */
 }
 
+/* Content sections */
+section {
+  background-color: #fff8dc; /* light sand */
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  margin: 1rem auto;
+  max-width: 700px;
+}
 
+/* Logo sizing */
+.logo {
+  height: 80px;
+  margin-bottom: 1rem;
+}
 
+/* Wave block — placed AFTER <main> in the HTML */
+.wave-container {
+  width: 100%;
+  height: 100px;
+  position: relative;
+  overflow: hidden;
+  /* optional spacing from content; remove if you want it tight to content */
+  margin-top: 2rem;
+  z-index: 0;           /* behind the footer if footer has higher z-index */
+  pointer-events: none; /* waves are decorative */
+}
+
+.wave {
+  position: absolute;
+  bottom: 0;
+  width: 200%;
+  height: 100px;
+  background-repeat: repeat-x;
+  background-size: contain;
+  opacity: 0.7;
+}
+
+.wave1 {
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 100"><path fill="%2387ceeb" d="M0,30 C300,90 900,-30 1200,30 L1200,100 L0,100 Z"></path></svg>');
+  animation: waveMove 8s linear infinite;
+}
+
+.wave2 {
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 100"><path fill="%2390e0ef" d="M0,40 C300,100 900,-20 1200,40 L1200,100 L0,100 Z"></path></svg>');
+  animation: waveMove 12s linear infinite reverse;
+}
+
+@keyframes waveMove {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Footer sits after the wave and stays at bottom on short pages */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #87ceeb;
+  color: white;
+  margin-top: 0;      /* remove extra gap so wave hugs the footer */
+}
