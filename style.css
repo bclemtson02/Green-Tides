@@ -264,4 +264,81 @@ footer {
   .pdf-embed object { height: 72vh; }
 }
 
+/* ===== SDGs page ===== */
+.sdg-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.sdg-card {
+  display: block;
+  background: #fff;
+  border-radius: 12px;
+  padding: 1rem;
+  text-decoration: none;
+  color: inherit;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  transition: transform .08s ease, box-shadow .2s ease, opacity .2s ease;
+}
+.sdg-card:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(0,0,0,0.12); }
+
+.sdg-badge {
+  display: inline-grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #2e8b57;  /* seaweed green */
+  color: #fff;
+  font-weight: 700;
+  margin-right: .5rem;
+  flex: 0 0 auto;
+}
+
+.sdg-section {
+  margin-top: 1.25rem;
+}
+
+.sdg-header {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  margin-bottom: .5rem;
+}
+
+.callout {
+  background: #fff;
+  border-left: 6px solid #2e8b57;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  margin: 0.75rem 0 1rem 0;
+}
+
+.findings h3,
+.callout h3 { margin-top: 0; }
+
+.report-link {
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.next {
+  margin-top: .5rem;
+  color: #2b2b2b;
+}
+
+.back {
+  text-align: right;
+  margin-top: .5rem;
+}
+.back a { text-decoration: none; opacity: .8; }
+.back a:hover { opacity: 1; }
+
+@media (min-width: 840px) {
+  .sdg-header h2 { margin: 0; }
+}
+
 
