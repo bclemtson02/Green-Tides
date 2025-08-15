@@ -75,14 +75,18 @@ header {
 }
 
 /* Content sections */
+/* Wider default section width across the site */
 section {
   background-color: #fff8dc; /* light sand */
   padding: 1.5rem;
   border-radius: 10px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   margin: 1rem auto;
-  max-width: 700px;
+
+  /* was: max-width: 700px; */
+  max-width: min(1100px, 94vw);  /* expands on desktop, stays comfy on mobile */
 }
+
 
 /* Logo sizing */
 .logo {
@@ -172,6 +176,17 @@ footer {
   z-index: 1;
 }
 
+section.hero {
+  max-width: none;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+
 /* Text container: ensure it's above the overlay */
 .hero-content {
   position: relative;
@@ -218,15 +233,12 @@ footer {
 }
 
 /* Team photo size */
-.team-card img {
-  width: 120px;          /* try 96px if you want smaller */
-  height: 120px;         /* keep square */
-  object-fit: cover;     /* crop to a neat circle */
-  border-radius: 50%;    /* circle avatar */
-  display: block;
-  margin: 0.5rem auto;   /* center it */
-  box-shadow: 0 1px 4px rgba(0,0,0,0.12);
-}
+/* good (scoped) */
+.team-card img { width: 120px; height: 120px; object-fit: cover; border-radius: 50%; }
+
+/* avoid this anywhere */
+ /* img { width: 120px; height: 120px; } */
+
 
 
 /* Report page */
