@@ -217,3 +217,15 @@ footer {
   .hero { min-height: 45vh; }
 }
 
+/* Team photo size */
+.team-card img {
+  width: 120px;          /* try 96px if you want smaller */
+  height: 120px;         /* keep square */
+  object-fit: cover;     /* crop to a neat circle */
+  border-radius: 50%;    /* circle avatar */
+  display: block;
+  margin: 0.5rem auto;   /* center it */
+  box-shadow: 0 1px 4px rgba(0,0,0,0.12);
+}
+
+
