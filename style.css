@@ -204,7 +204,7 @@ footer {
 .btn:active { transform: translateY(0); opacity: 0.9; }
 
 /* mobile tweak so hero isn't too tall on short screens */
-@media (max-width: 520px) {
+@media (max-width: 300px) {
   .hero { min-height: 45vh; }
 }
 
