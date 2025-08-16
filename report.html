@@ -24,14 +24,13 @@
     </ul>
   </nav>
 
-  <main>
+ <main>
   <section>
     <h1>Green Tides — Final Report</h1>
     <p class="lede">
       Read the full write-up of findings, methods, and appendices for the Imperial Beach study.
     </p>
 
-    <!-- Quick links jump to specific pages -->
     <nav class="report-links" aria-label="Report quick links">
       <a data-page="3" href="#">Introduction</a>
       <a data-page="3" href="#">SDGs</a>
@@ -42,7 +41,6 @@
       <a download href="Green Tides - Final Report.pdf">Download PDF</a>
     </nav>
 
-    <!-- PDF embed -->
     <div class="pdf-embed">
       <iframe
         id="reportFrame"
@@ -50,30 +48,21 @@
         src="Green Tides - Final Report.pdf#view=FitH&toolbar=1&navpanes=0&page=1"
         loading="lazy"
       ></iframe>
-
-      <!-- Fallback for older browsers -->
-      <object data="Green Tides - Final Report.pdf#view=FitH&page=1" type="application/pdf">
-        <p>
-          Your browser can’t display PDFs. 
-          <a href="Green Tides - Final Report.pdf" target="_blank" rel="noopener">Open the report</a>.
-        </p>
-      </object>
     </div>
   </section>
 </main>
 
-<!-- tiny JS to change pages inside the iframe -->
 <script>
   const frame = document.getElementById('reportFrame');
   document.querySelectorAll('.report-links a[data-page]').forEach(a => {
     a.addEventListener('click', e => {
       e.preventDefault();
-      const p = a.getAttribute('data-page');
-      const base = "Green Tides - Final Report.pdf";
-      frame.src = `${base}#view=FitH&toolbar=1&navpanes=0&page=${p}`;
+      const p = a.dataset.page;
+      frame.src = `Green Tides - Final Report.pdf#view=FitH&toolbar=1&navpanes=0&page=${p}`;
     });
   });
 </script>
+
 
   <div class="wave-container">
     <div class="wave wave1"></div>
