@@ -1,42 +1,155 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Green Tides - Video</title>
-  <link rel="icon" type="image/png" href="favicon.png" />
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Green Tides · Videos</title>
+  <meta name="description" content="Watch Green Tides videos: project updates, SDG explainers, and community stories." />
+  <meta property="og:title" content="Green Tides · Videos" />
+  <meta property="og:description" content="Watch Green Tides videos: project updates, SDG explainers, and community stories." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="/assets/og/green-tides-og.jpg" />
+  <link rel="icon" href="/assets/favicon.ico" />
+  <style>
+    :root{
+      --bg:#0b1d2a;        /* deep ocean */
+      --fg:#eaf6ff;        /* foam */
+      --muted:#b3d7ff;     /* sea mist */
+      --accent:#35c2a1;    /* sea green */
+      --sand:#ffe7b3;      /* beach */
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif;
+      color:var(--fg);
+      background:linear-gradient(180deg,#0b1d2a 0%, #0f2b3d 40%, #143e56 100%);
+    }
+    .container{max-width:1100px;margin:0 auto;padding:24px}
+    header{
+      position:sticky;top:0;z-index:50;
+      background:rgba(11,29,42,.8);backdrop-filter:saturate(140%) blur(6px);
+      border-bottom:1px solid rgba(255,255,255,.08);
+    }
+    .nav{display:flex;align-items:center;gap:16px;}
+    .brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--fg);}
+    .brand img{width:36px;height:36px;border-radius:12px}
+    .brand span{font-weight:700;letter-spacing:.2px}
+    .nav a{color:var(--muted);text-decoration:none;padding:8px 10px;border-radius:10px}
+    .nav a:hover{background:rgba(255,255,255,.06);color:var(--fg)}
+    .hero{padding:40px 0}
+    .hero h1{font-size:clamp(28px,4vw,40px);margin:0 0 8px}
+    .hero p{margin:0;color:var(--muted)}
+
+    .grid{display:grid;gap:22px;grid-template-columns:repeat(auto-fill,minmax(280px,1fr))}
+    .card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:18px;overflow:hidden;box-shadow:0 8px 30px rgba(0,0,0,.25)}
+    .card .media{position:relative;aspect-ratio:16/9;background:rgba(0,0,0,.3)}
+    .card h3{margin:14px 16px 6px;font-size:1.05rem}
+    .card p{margin:0 16px 14px;color:var(--muted);font-size:.95rem}
+
+    /* Transcript & details */
+    details{background:rgba(255,255,255,.04);border-top:1px solid rgba(255,255,255,.08);padding:10px 14px}
+    summary{cursor:pointer;color:var(--sand);font-weight:600}
+    details p{margin:10px 0 0;color:#e6f4ff}
+
+    /* Waves divider */
+    .waves{
+      height:48px; background:linear-gradient(180deg,transparent,rgba(255,255,255,.04));
+      -webkit-mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"><path d="M0 49c71 0 142-24 214-24s143 24 214 24 142-24 214-24 143 24 214 24 142-24 214-24v75H0z" fill="%23000"/></svg>') center/cover no-repeat;
+              mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"><path d="M0 49c71 0 142-24 214-24s143 24 214 24 142-24 214-24 143 24 214 24 142-24 214-24v75H0z" fill="%23000"/></svg>') center/cover no-repeat;
+    }
+
+    footer{color:var(--muted);text-align:center;padding:30px 0 40px}
+    .badge{display:inline-block;font-size:.8rem;padding:4px 10px;border:1px solid rgba(255,255,255,.18);border-radius:999px;margin-top:8px}
+
+    /* Responsive tweak for very small screens */
+    @media (max-width:360px){
+      .nav a{display:none}
+    }
+  </style>
 </head>
 <body>
-  <nav class="navbar">
-    <div class="nav-left">
-      <img src="GT.png" alt="Green Tides Logo" class="nav-logo" />
-      <span class="site-name">Green Tides</span>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="/">
+        <img src="/assets/logo.png" alt="Green Tides logo" />
+        <span>Green Tides</span>
+      </a>
+      <nav style="margin-left:auto;display:flex;gap:8px">
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+        <a href="/projects">Projects</a>
+        <a href="/videos" aria-current="page" style="color:var(--fg)">Videos</a>
+      </nav>
     </div>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="sdgs.html">4 SDGs</a></li>
-      <li><a href="report.html">Report</a></li>
-      <li><a href="video.html">Video</a></li>
-      <li><a href="literature.html">Literature Review</a></li>
-      <li><a href="methods.html">Research Methods</a></li>
-    </ul>
-  </nav>
+  </header>
 
-  <main>
-    <section>
-      <h1>Video</h1>
-      <p>This page is for video content.</p>
+  <main class="container">
+    <section class="hero">
+      <h1>Videos</h1>
+      <p>Project updates, SDG explainers, and community stories. All embeds are responsive, accessible, and privacy-minded.</p>
+    </section>
+
+    <div class="waves" aria-hidden="true"></div>
+
+    <section class="grid" aria-label="Video gallery">
+      <!-- SELF-HOSTED: GREEN TIDES MP4 ON GITHUB PAGES -->
+      <article class="card">
+        <div class="media">
+          <video
+            width="100%"
+            height="100%"
+            controls
+            preload="metadata"
+            poster="/assets/video/green-tides.jpg"
+            aria-describedby="vid-desc-green-tides">
+            <!-- If your filename contains spaces, the URL must be encoded as %20 -->
+            <source src="/assets/video/Green%20Tides.mp4" type="video/mp4" />
+            <!-- Optional captions; drop a VTT file at this path and uncomment
+            <track kind="captions" src="/assets/video/green-tides.en.vtt" srclang="en" label="English" default />
+            -->
+            <p>Your browser doesn’t support HTML5 video. Here’s a <a href="/assets/video/Green%20Tides.mp4" download>direct download</a>.</p>
+          </video>
+        </div>
+        <h3>Green Tides</h3>
+        <p id="vid-desc-green-tides">Main project video hosted on GitHub Pages.</p>
+        <details>
+          <summary>Transcript</summary>
+          <p>Paste the transcript text here (recommended for accessibility and SEO).</p>
+        </details>
+      </article>
+    </section>
+
+    <section class="container" style="padding:40px 0 10px">
+      <div class="badge" role="note">Tip: Replace video IDs/paths and posters with your own assets.</div>
     </section>
   </main>
 
+  <footer>
+    <small>© <span id="year"></span> Green Tides · Built on GitHub Pages</small>
+  </footer>
 
+  <script>
+    // Update year
+    document.getElementById('year').textContent = new Date().getFullYear();
 
-  <div class="wave-container">
-    <div class="wave wave1"></div>
-    <div class="wave wave2"></div>
-  </div>
-  
+    // Optional: Lazy-load heavy embeds only when visible
+    // (This example is already using loading="lazy"; below is a pattern for data-src if needed)
+    const ios = 'IntersectionObserver' in window;
+    if(ios){
+      const observer = new IntersectionObserver((entries)=>{
+        entries.forEach(entry=>{
+          if(entry.isIntersecting){
+            const el = entry.target;
+            if(el.dataset && el.dataset.src){ el.src = el.dataset.src; }
+            observer.unobserve(el);
+          }
+        });
+      }, {rootMargin:'200px'});
+      document.querySelectorAll('iframe[data-src]').forEach(el=>observer.observe(el));
+    }
+  </script>
 </body>
 </html>
+
