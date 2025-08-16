@@ -68,6 +68,32 @@
     <div class="wave wave1"></div>
     <div class="wave wave2"></div>
   </div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const frame = document.getElementById('reportFrame');
+    if (!frame) return;
+
+    // Use a simple file name if possible (hyphens instead of spaces helps)
+    const pdfFile = 'Green Tides - Final Report.pdf';
+    const base = encodeURI(pdfFile); // handles spaces
+
+    function goTo(page) {
+      // Force the viewer to reload even if only the hash changes
+      const url = `${base}?v=${Date.now()}#page=${page}&view=FitH`;
+      frame.src = url;
+    }
+
+    document.querySelectorAll('.report-links a[data-page]').forEach(a => {
+      a.addEventListener('click', function (e) {
+        e.preventDefault();
+        const p = this.getAttribute('data-page');
+        goTo(p);
+      });
+    });
+  });
+</script>
+
   
 </body>
 </html>
